@@ -1,5 +1,31 @@
 local plugins = {
 	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+	},
+	{
+		"NAlexPear/Spacegray.nvim",
+	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			require("everforest").setup({
+				background = "hard",
+				-- Your config here
+			})
+		end,
+	},
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+	},
+	{
 		"mbbill/undotree",
 	},
 	{

@@ -190,9 +190,10 @@ map("n", "<leader>D", function()
 	vim.lsp.buf.type_definition()
 end, { desc = "LSP type definition" })
 
-map("n", "<leader>ra", function()
-	require("nvchad.renamer").open()
-end, { desc = "LSP rename" })
+vim.keymap.set("n", "<leader>ra", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+-- map("n", "<leader>ra", "<cmd>IncRename<CR>", { desc = "LSP rename" })
 
 map("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()

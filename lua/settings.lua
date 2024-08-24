@@ -10,7 +10,10 @@ local g = vim.g
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.expandtab = true
+opt.softtabstop = 2
 
+-- Line spacing
+o.linespace = 2
 -- Termguicolors for better color accuracy
 opt.termguicolors = true
 
@@ -38,6 +41,6 @@ opt.clipboard:append("unnamedplus")
 -- Colorscheme
 api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		cmd("colorscheme catppuccin")
+		cmd("colorscheme everforest")
 	end,
 })
