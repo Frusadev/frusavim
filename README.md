@@ -87,7 +87,7 @@ My own neovim configuration!
 | Telescope git commits                     | leader-cm     | Search git commits.                                                                                            | Normal          |
 | Telescope git status                      | leader-gt     | Search git status.                                                                                             | Normal          |
 | Telescope pick hidden term                | leader-pt     | Pick hidden terminal.                                                                                          | Normal          |
-| Telescope nvchad themes                   | leader-th     | Select themes.                                                                                          | Normal          |
+| Telescope themes                   | leader-th     | Select themes.                                                                                          | Normal          |
 | Telescope find files                      | leader-ff     | Search for files, including hidden.                                                                            | Normal          |
 | Telescope find all files                  | leader-fa     | Search all files, following links and showing hidden.                                                          | Normal          |
 | **_Pomodoro_**                              |               |                                                                                                               |                 |
