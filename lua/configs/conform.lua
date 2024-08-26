@@ -6,6 +6,7 @@ local options = {
     html = { "prettier" },
     json = { "jq" },
     javascriptreact = { "biome" },
+    typescript = { "biome" },
     typescriptreact = { "biome" },
     python = { "black" },
     dart = { "dart_format" },
