@@ -9,9 +9,9 @@ local options = {
 	},
 	view = {
 		width = 35,
-    side = "left",
+		side = "left",
 		preserve_window_proportions = true,
-    signcolumn = "no",
+		signcolumn = "no",
 	},
 	renderer = {
 		root_folder_label = false,
