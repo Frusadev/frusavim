@@ -6,26 +6,6 @@ local plugins = {
 		end,
 	},
 	{
-		"NAlexPear/Spacegray.nvim",
-	},
-	{
-		"neanias/everforest-nvim",
-		version = false,
-		lazy = false,
-		priority = 1000, -- make sure to load this before all the other start plugins
-		-- Optional; default configuration will be used if setup isn't called.
-		config = function()
-			require("everforest").setup({
-				background = "hard",
-				-- Your config here
-			})
-		end,
-	},
-	{
-		"olimorris/onedarkpro.nvim",
-		priority = 1000, -- Ensure it loads first
-	},
-	{
 		"mbbill/undotree",
 	},
 	{
@@ -62,30 +42,6 @@ local plugins = {
 		config = function()
 			require("configs.cmp")
 		end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		config = function()
-			require("configs.themes.catppuccin")
-		end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-	},
-	{
-		"backdround/melting",
-		config = function()
-			require("melting").setup({})
-		end,
-	},
-	{
-		"comfysage/evergarden",
-		priority = 2000,
-		opts = {
-			contrast_dark = "hard",
-		},
-		lazy = false,
 	},
 
 	{
@@ -158,7 +114,13 @@ local plugins = {
 				Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
 			},
 			icons = {
-				separator = { left = "|", right = "" },
+				separator = { left = "▏", right = "" },
+			},
+			sidebar_filetypes = {
+				NvimTree = {
+					text = "Project root",
+					align = "center",
+				},
 			},
 		},
 		init = function()
@@ -197,6 +159,7 @@ local plugins = {
 				"nimlsp",
 				"nimlangserver",
 				"eslint-lsp",
+				"eslint_d",
 				"flake8",
 				"htmlhint",
 				"html-lsp",
@@ -241,9 +204,6 @@ local plugins = {
 	{
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = function()
-			return require("configs.treesitter")
-		end,
 		lazy = false,
 	},
 	{
@@ -320,6 +280,9 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		opts = function()
+			return require("configs.treesitter")
+		end,
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 			-- dofile(vim.g.base46_cache .. "syntax")
@@ -401,16 +364,16 @@ local plugins = {
 		end,
 		event = "VeryLazy",
 	},
-	-- {
-	--   "vidocqh/auto-indent.nvim",
-	--   opts = {},
-	--   config = function()
-	--     require("auto-indent").setup {
-	--       lightmode = false,
-	--     }
-	--   end,
-	--   event = "VeryLazy",
-	-- },
+	{
+		"vidocqh/auto-indent.nvim",
+		opts = {},
+		config = function()
+			require("auto-indent").setup({
+				lightmode = false,
+			})
+		end,
+		event = "VeryLazy",
+	},
 	{
 		"pocco81/auto-save.nvim",
 		config = function()

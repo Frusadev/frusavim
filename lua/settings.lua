@@ -41,6 +41,6 @@ opt.clipboard:append("unnamedplus")
 -- Colorscheme
 api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		cmd("colorscheme everforest")
+		cmd("colorscheme lackluster-mint")
 	end,
 })
