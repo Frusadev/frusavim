@@ -22,6 +22,8 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 map("n", "<leader>O", "O<Esc>j", { desc = "Add line on top" })
 map("n", "<leader>o", "o<Esc>k", { desc = "Add line at the bottom" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+map("v", "<leader>du", "ypgv", { desc = "Duplicate selection" })
+map("n", "du", "yyp", { desc = "Duplicate line" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
@@ -191,7 +193,7 @@ map("n", "<leader>D", function()
 end, { desc = "LSP type definition" })
 
 vim.keymap.set("n", "<leader>ra", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
+	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 -- map("n", "<leader>ra", "<cmd>IncRename<CR>", { desc = "LSP rename" })
 

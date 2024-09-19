@@ -1,4 +1,10 @@
 local themes = {
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 	{ "slugbyte/lackluster.nvim" },
 	{ "Shadorain/shadotheme" },
 	{ "nekonako/xresources-nvim" },

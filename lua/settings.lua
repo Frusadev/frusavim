@@ -14,9 +14,6 @@ opt.softtabstop = 2
 
 -- Line spacing
 o.linespace = 2
--- Termguicolors for better color accuracy
-opt.termguicolors = true
-
 -- Persistent undo (Undo even after closing the buffer)
 opt.undofile = true
 opt.undodir = os.getenv("HOME") .. "/.local/state/undo"
@@ -41,6 +38,8 @@ opt.clipboard:append("unnamedplus")
 -- Colorscheme
 api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		cmd("colorscheme lackluster-mint")
+    vim.defer_fn(function()
+			cmd("colorscheme tokyonight-moon")
+		end, 200)
 	end,
 })

@@ -1,4 +1,10 @@
 local plugins = {
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end,
+  },
 	{
 		"smjonas/inc-rename.nvim",
 		config = function()
