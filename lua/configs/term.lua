@@ -1,6 +1,6 @@
 require("nvterm").setup({
   terminals = {
-    shell = "tmux",
+    shell = "fish",
     list = {},
     type_opts = {
       float = {
