@@ -1,17 +1,17 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
+    css = { "prettier" },
     javascript = { "biome" },
     html = { "prettier" },
     json = { "jq" },
     javascriptreact = { "biome" },
     typescript = { "biome" },
     typescriptreact = { "biome" },
-    python = { "black" },
+    python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
     dart = { "dart_format" },
-    -- html = { "prettier" },
-    golang = {"gofmt"},
+    golang = { "gofmt" },
+    toml = { "taplo" },
   },
 
   -- format_on_save = {
@@ -19,6 +19,20 @@ local options = {
   --   timeout_ms = 500,
   --   lsp_fallback = true,
   -- },
+  --
+  formatters = {
+    stylua = {
+      args = {
+        "--indent-type",
+        "Spaces",
+        "--indent-width",
+        "2",
+        "--stdin-filepath",
+        "$FILENAME",
+        "-",
+      },
+    },
+  },
 }
 
 require("conform").setup(options)

@@ -1,22 +1,18 @@
 local lspconfig = require("lspconfig")
-local servers = { "html", "lua_ls", "gopls", "cssls", "tsserver", "pyright", "nimls", "v_analyzer", "tailwindcss" }
+local servers = { "html", "basedpyright", "lua_ls", "gopls", "cssls", "ts_ls", "nimls", "v_analyzer", "tailwindcss" }
 
+lspconfig["basedpyright"].setup({
+  settings = {
+    python = {
+      venvPath = "~/Workspace/sys/python/env/",
+      pythonPath = "~/Workspace/sys/python/env/bin/python"
+    }
+  }
+})
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({})
+  lspconfig[lsp].setup({})
 end
-
-lspconfig["pyright"].setup {
-  python = {
-    analysis = {
-      autoSearchPaths = true,
-      useLibraryCodeForTypes = true,
-      diagnosticMode = "workspace",
-      venvPath = ".venv",
-      pythonPath = ".venv/venv/bin/python",
-    },
-  },
-}
 
 -- vim.api.nvim_create_autocmd("LspAttach", {
 --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
