@@ -39,7 +39,7 @@ opt.clipboard:append("unnamedplus")
 api.nvim_create_autocmd("VimEnter", {
 	callback = function()
     vim.defer_fn(function()
-			cmd("colorscheme tokyonight-moon")
+			cmd("colorscheme tokyonight-night")
 		end, 200)
 	end,
 })
