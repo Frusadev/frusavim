@@ -8,6 +8,7 @@ return {
     opts = {
       ensure_installed = {
         "basedpyright",
+        "pyright",
         "nimlsp",
         "nimlangserver",
         "flake8",
