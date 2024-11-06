@@ -13,7 +13,6 @@ local themes = {
 	{ "Tsuzat/NeoSolarized.nvim" },
 	{ "Shatur/neovim-ayu" },
 	{ "sixfourtwelve/bore.vim" },
-	{ "atelierbram/Base4Tone-nvim" },
 	{
 		"franbach/miramare",
 	},

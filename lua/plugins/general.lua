@@ -1,5 +1,11 @@
 local plugins = {
   {
+    "brenton-leighton/multiple-cursors.nvim",
+    version = "*",
+    opts = {},
+    keys = require("configs.multicursor.keys")
+  },
+  {
     "brenoprata10/nvim-highlight-colors",
     config = function()
       require("nvim-highlight-colors").setup({})
