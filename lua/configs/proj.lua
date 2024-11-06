@@ -11,6 +11,7 @@ require("cd-project").setup {
     "go.mod",
     "*.nimble",
     ".venv",
+    "pyproject.toml",
     "main.py",
     "src",
     "isproj",
