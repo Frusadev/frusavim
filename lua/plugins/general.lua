@@ -1,9 +1,19 @@
 local plugins = {
   {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+    config = function()
+      require("configs.cursor")
+    end,
+  },
+  { "nvim-telescope/telescope-project.nvim", dependencies = {
+    "nvim-telescope/telescope.nvim",
+  } },
+  {
     "brenton-leighton/multiple-cursors.nvim",
     version = "*",
     opts = {},
-    keys = require("configs.multicursor.keys")
+    keys = require("configs.multicursor.keys"),
   },
   {
     "brenoprata10/nvim-highlight-colors",
