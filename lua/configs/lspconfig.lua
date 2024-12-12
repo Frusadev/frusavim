@@ -9,6 +9,7 @@ local servers = {
   "nimls",
   "v_analyzer",
   "tailwindcss",
+  "phpactor",
 }
 
 lspconfig["basedpyright"].setup({
