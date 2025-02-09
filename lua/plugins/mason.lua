@@ -24,7 +24,9 @@ return {
         "v-analyzer",
         "tailwindcss-language-server",
         "stylua",
-        "typescript-language-server",
+        "css-lsp",
+        "vtsls",
+        "dockerfile-language-server",
       },
     },
     config = function(_, opts)
