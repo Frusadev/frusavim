@@ -5,11 +5,12 @@ local servers = {
   "lua_ls",
   "gopls",
   "cssls",
-  "ts_ls",
+  "vtsls",
   "nimls",
   "v_analyzer",
   "tailwindcss",
   "phpactor",
+  "dockerls",
 }
 
 lspconfig["basedpyright"].setup({
@@ -19,6 +20,10 @@ lspconfig["basedpyright"].setup({
       pythonPath = "~/Workspace/sys/python/env/bin/python",
     },
   },
+})
+
+lspconfig["tailwindcss"].setup({
+  filetypes = {"html", "typescriptreact", "javascriptreact", "svelte", "vue"},
 })
 -- lsps with default config
 for _, lsp in ipairs(servers) do
