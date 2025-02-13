@@ -1,35 +1,35 @@
 local plugins = {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("configs.copilot")
-    end,
-  },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("configs.chat")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim", -- optional
-      "nvim-telescope/telescope.nvim",
-    },
-  },
-  {
-    "sphamba/smear-cursor.nvim",
-    opts = {},
-    config = function()
-      require("configs.cursor")
-    end,
-  },
-  { "nvim-telescope/telescope-project.nvim", dependencies = {
-    "nvim-telescope/telescope.nvim",
-  } },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({})
+  --   end,
+  -- },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("configs.chat")
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "folke/trouble.nvim", -- optional
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  -- },
+  -- {
+  --   "sphamba/smear-cursor.nvim",
+  --   opts = {},
+  --   config = function()
+  --     require("configs.cursor")
+  --   end,
+  -- },
+  -- { "nvim-telescope/telescope-project.nvim", dependencies = {
+  --   "nvim-telescope/telescope.nvim",
+  -- } },
   {
     "brenton-leighton/multiple-cursors.nvim",
     version = "*",
@@ -48,9 +48,9 @@ local plugins = {
       require("inc_rename").setup()
     end,
   },
-  {
-    "mbbill/undotree",
-  },
+  -- {
+  --   "mbbill/undotree",
+  -- },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -166,11 +166,11 @@ local plugins = {
       require("configs.term")
     end,
   },
-  {
-    "luckasRanarison/tailwind-tools.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = false,
-  },
+  -- {
+  --   "luckasRanarison/tailwind-tools.nvim",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   lazy = false,
+  -- },
   {
     "LintaoAmons/cd-project.nvim",
     lazy = false,
@@ -185,32 +185,32 @@ local plugins = {
       return require("configs.telescope")
     end,
   },
-  {
-    "petertriho/nvim-scrollbar",
-    config = function()
-      require("configs.scroll")
-    end,
-    lazy = false,
-  },
+  -- {
+  --   "petertriho/nvim-scrollbar",
+  --   config = function()
+  --     require("configs.scroll")
+  --   end,
+  --   lazy = false,
+  -- },
   {
     "rmagatti/goto-preview",
     config = function() end,
     event = "VeryLazy",
   },
-  {
-    "folke/noice.nvim",
-    config = function()
-      return require("configs.noice")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    event = "VeryLazy",
-  },
-  {
-    "https://github.com/mlaursen/vim-react-snippets.git",
-    lazy = false,
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   config = function()
+  --     return require("configs.noice")
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   event = "VeryLazy",
+  -- },
+  -- {
+  --   "https://github.com/mlaursen/vim-react-snippets.git",
+  --   lazy = false,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
@@ -305,19 +305,6 @@ local plugins = {
     config = function(_, opts) end,
   },
   {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-
-    config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-    end,
-  },
-  {
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
@@ -341,7 +328,6 @@ local plugins = {
       end
     end,
   },
-  { "heysokam/nim.vim", lazy = false },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
