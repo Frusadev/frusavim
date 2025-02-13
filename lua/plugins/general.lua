@@ -1,29 +1,4 @@
 local plugins = {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({})
-  --   end,
-  -- },
-  -- {
-  --   "jackMort/ChatGPT.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("configs.chat")
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "folke/trouble.nvim", -- optional
-  --     "nvim-telescope/telescope.nvim",
-  --   },
-  -- },
-  -- {
-  -- { "nvim-telescope/telescope-project.nvim", dependencies = {
-  --   "nvim-telescope/telescope.nvim",
-  -- } },
   {
     "brenton-leighton/multiple-cursors.nvim",
     version = "*",
