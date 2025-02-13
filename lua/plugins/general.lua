@@ -197,20 +197,6 @@ local plugins = {
     config = function() end,
     event = "VeryLazy",
   },
-  -- {
-  --   "folke/noice.nvim",
-  --   config = function()
-  --     return require("configs.noice")
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   event = "VeryLazy",
-  -- },
-  -- {
-  --   "https://github.com/mlaursen/vim-react-snippets.git",
-  --   lazy = false,
-  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
