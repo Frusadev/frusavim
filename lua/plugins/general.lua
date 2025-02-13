@@ -166,11 +166,6 @@ local plugins = {
       require("configs.term")
     end,
   },
-  -- {
-  --   "luckasRanarison/tailwind-tools.nvim",
-  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
-  --   lazy = false,
-  -- },
   {
     "LintaoAmons/cd-project.nvim",
     lazy = false,
