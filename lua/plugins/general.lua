@@ -185,13 +185,6 @@ local plugins = {
       return require("configs.telescope")
     end,
   },
-  -- {
-  --   "petertriho/nvim-scrollbar",
-  --   config = function()
-  --     require("configs.scroll")
-  --   end,
-  --   lazy = false,
-  -- },
   {
     "rmagatti/goto-preview",
     config = function() end,
