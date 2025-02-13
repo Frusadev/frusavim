@@ -17,9 +17,6 @@ local plugins = {
       require("inc_rename").setup()
     end,
   },
-  -- {
-  --   "mbbill/undotree",
-  -- },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
