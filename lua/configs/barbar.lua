@@ -1,2 +1,0 @@
-
-require'barbar'.setup(opts)
