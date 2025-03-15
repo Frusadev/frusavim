@@ -12,7 +12,6 @@ local themes = {
   { "nerdypepper/agila.vim" },
   { "Tsuzat/NeoSolarized.nvim" },
   { "Shatur/neovim-ayu" },
-  { "sixfourtwelve/bore.vim" },
   {
     "franbach/miramare",
   },
@@ -67,6 +66,10 @@ local themes = {
       contrast_dark = "hard",
     },
     lazy = false,
+  },
+  {
+    "tiagovla/tokyodark.nvim",
+    opts = {},
   },
 }
 

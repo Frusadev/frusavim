@@ -27,6 +27,8 @@ return {
         "css-lsp",
         "vtsls",
         "dockerfile-language-server",
+        "clangd",
+        "clang-format"
       },
     },
     config = function(_, opts)

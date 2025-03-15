@@ -1,35 +1,11 @@
 local plugins = {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("configs.copilot")
-    end,
-  },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("configs.chat")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim", -- optional
-      "nvim-telescope/telescope.nvim",
-    },
-  },
-  {
     "sphamba/smear-cursor.nvim",
     opts = {},
     config = function()
       require("configs.cursor")
     end,
   },
-  { "nvim-telescope/telescope-project.nvim", dependencies = {
-    "nvim-telescope/telescope.nvim",
-  } },
   {
     "brenton-leighton/multiple-cursors.nvim",
     version = "*",
@@ -59,111 +35,9 @@ local plugins = {
     end,
   },
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    config = function()
-      require("configs.cmp")
-    end,
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    --@module "ibl"
-    ---@type ibl.config
-    opts = {},
-    config = function()
-      require("configs.indent")
-    end,
-  },
-  {
-    "windwp/nvim-autopairs",
-    opts = {
-      fast_wrap = {},
-      disable_filetype = { "TelescopePrompt", "vim" },
-    },
-    config = function(_, opts)
-      require("nvim-autopairs").setup(opts)
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-    end,
-  },
-  {
     "stevearc/conform.nvim",
     config = function()
       require("configs.conform")
-    end,
-  },
-  {
-    {
-      "nvim-tree/nvim-tree.lua",
-      version = "*",
-      lazy = false,
-      dependencies = {
-        "nvim-tree/nvim-web-devicons",
-      },
-      opts = function()
-        return require("configs.nvtree")
-      end,
-    },
-  },
-  {
-    "romgrk/barbar.nvim",
-    dependencies = {
-      "lewis6991/gitsigns.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-
-    opts = {
-      animation = true,
-      icons = {
-        separator = { left = "▏", right = "" },
-      },
-      sidebar_filetypes = {
-        undotree = {
-          text = "undotree",
-          align = "center",
-        },
-        ["neo-tree"] = { event = "BufWipeout" },
-        Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
-
-        NvimTree = {
-          text = "Project root",
-          align = "center",
-        },
-      },
-    },
-    init = function()
-      vim.g.barbar_auto_setup = false
-    end,
-    version = "^1.0.0", -- optional: only update when a new 1.x version is released
-  },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {},
-    keys = {
-      {
-        "<leader>?",
-        function()
-          require("which-key").show({ global = false })
-        end,
-        desc = "Buffer Local Keymaps (which-key)",
-      },
-    },
-  },
-  {
-    "zbirenbaum/nvterm",
-    config = function()
-      require("configs.term")
     end,
   },
   {
@@ -171,20 +45,13 @@ local plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     lazy = false,
   },
-  {
-    "LintaoAmons/cd-project.nvim",
-    lazy = false,
-    config = function()
-      require("configs.proj")
-    end,
-  },
-  {
-    "nvim-telescope/teleScope.nvim",
-    tag = "0.1.8",
-    config = function()
-      return require("configs.telescope")
-    end,
-  },
+  -- {
+  --   "LintaoAmons/cd-project.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("configs.proj")
+  --   end,
+  -- },
   {
     "petertriho/nvim-scrollbar",
     config = function()
