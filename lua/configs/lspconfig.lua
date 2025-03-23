@@ -11,6 +11,8 @@ local servers = {
   "tailwindcss",
   "phpactor",
   "dockerls",
+  "gleam",
+  "clangd"
 }
 
 lspconfig["basedpyright"].setup({

@@ -4,39 +4,29 @@ return {
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    opts = {
-      window = {
-        position = "left",
-      },
-      filesystem = {
-        filtered_items = {
-
-          hide_dotfiles = false,
-          hide_by_name = {
-            "node_modules",
-            ".git",
-            ".cache",
-            ".vscode",
-            ".idea",
-            ".DS_Store",
-            ".gitattributes",
-            ".gitmodules",
-            ".gitkeep",
-            ".gitlab-ci.yml",
-            ".gitlab",
-            "__pycache__",
+    config = function()
+      require("neo-tree").setup({
+        use_libuv_file_watcher = true,
+        filesystem = {
+          filters = {
+            respect_gitignore = true,
           },
-          always_show = {
-            ".env"
-          }
         },
-      },
-      hijack_cursor = {
-        enable = true,
-      }
-    },
+        -- disable_netrw = true,
+        -- auto_close = true,
+        -- update_focused_file = {
+        --   enable = true,
+        --   update_cwd = true,
+        -- },
+        -- view = {
+        --   width = 30,
+        --   side = "left",
+        --   auto_resize = false,
+        -- },
+      })
+    end,
   },
 }

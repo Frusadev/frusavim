@@ -4,7 +4,7 @@ local options = {
     css = { "prettier" },
     javascript = { "biome" },
     html = { "htmlbeautifier" },
-    json = { "jq" },
+    json = { "biome" },
     javascriptreact = { "biome" },
     typescript = { "biome" },
     typescriptreact = { "biome" },
@@ -13,6 +13,8 @@ local options = {
     golang = { "gofmt" },
     toml = { "taplo" },
     php = { "phpcbf" },
+    gleam = { "gleam" },
+    cpp = { "clang-format" },
   },
 
   -- format_on_save = {
@@ -43,6 +45,11 @@ local options = {
         "--stdin-file-path",
         "$FILENAME",
         "-",
+      },
+      javascript = {
+        parser = {
+          unsafeParameterDecoratorsEnabled = true,
+        },
       },
     },
   },

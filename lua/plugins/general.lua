@@ -45,13 +45,6 @@ local plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     lazy = false,
   },
-  -- {
-  --   "LintaoAmons/cd-project.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require("configs.proj")
-  --   end,
-  -- },
   {
     "petertriho/nvim-scrollbar",
     config = function()

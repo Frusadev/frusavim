@@ -8,6 +8,7 @@ if vim.g.neovide then
   map("n", "<C-S-v>", '"+p', { noremap = true, silent = true })
   map("v", "<C-S-v>", '"+p', { noremap = true, silent = true })
   map("i", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
+  map("t", "<C-S-v>", "<C-R>+", { noremap = true, silent = true })
 
   -- Mapping for Ctrl+Shift+C to copy
   map("v", "<C-S-c>", '"+y', { noremap = true, silent = true })
@@ -45,38 +46,40 @@ map("n", "<leader>cv", "<cmd>VenvSelect<cr>", { desc = "Change python venv" })
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 
--- barbar
+-- Lazygit
+map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+
+-- Buffer creation
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
 -- Buffer navigation
-map("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "buffer goto next" })
-map("n", "<S-tab>", "<Cmd>BufferPrevious<CR>", { desc = "buffer goto next" })
+map("n", "<tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
+map("n", "<S-tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto next" })
 -- Buffer movement
-map("n", "<C-tab>", "<Cmd>BufferMovePrevious<CR>", opts)
-map("n", "<C-S-tab>", "<Cmd>BufferMoveNext<CR>", opts)
+map("n", "<C-tab>", "<Cmd>BufferLineMovePrev<CR>")
+map("n", "<C-S-tab>", "<Cmd>BufferLineMoveNext<CR>")
 -- Close buffer
-map("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "buffer close" })
+map("n", "<leader>x", "<Cmd>bdelete<CR>", { desc = "buffer close" })
 
 -- Buffer navigation with numbers
-map("n", "<C-1>", "<Cmd>BufferGoto 1<CR>", opts)
-map("n", "<C-2>", "<Cmd>BufferGoto 2<CR>", opts)
-map("n", "<C-3>", "<Cmd>BufferGoto 3<CR>", opts)
-map("n", "<C-4>", "<Cmd>BufferGoto 4<CR>", opts)
-map("n", "<C-5>", "<Cmd>BufferGoto 5<CR>", opts)
-map("n", "<C-6>", "<Cmd>BufferGoto 6<CR>", opts)
-map("n", "<C-7>", "<Cmd>BufferGoto 7<CR>", opts)
-map("n", "<C-8>", "<Cmd>BufferGoto 8<CR>", opts)
-map("n", "<C-9>", "<Cmd>BufferGoto 9<CR>", opts)
-map("n", "<C-0>", "<Cmd>BufferLast<CR>", opts)
-map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
+map("n", "<C-1>", "<Cmd>BufferLineGotoBuffer 1<CR>")
+map("n", "<C-2>", "<Cmd>BufferLineGotoBuffer 2<CR>")
+map("n", "<C-3>", "<Cmd>BufferLineGotoBuffer 3<CR>")
+map("n", "<C-4>", "<Cmd>BufferLineGotoBuffer 4<CR>")
+map("n", "<C-5>", "<Cmd>BufferLineGotoBuffer 5<CR>")
+map("n", "<C-6>", "<Cmd>BufferLineGotoBuffer 6<CR>")
+map("n", "<C-7>", "<Cmd>BufferLineGotoBuffer 7<CR>")
+map("n", "<C-8>", "<Cmd>BufferLineGotoBuffer 8<CR>")
+map("n", "<C-9>", "<Cmd>BufferLineGotoBuffer 9<CR>")
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
 
--- Neotree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
-
+-- Explorers
+map("n", "<leader>fe", function()
+  require("telescope").extensions.file_browser.file_browser()
+end, { desc = "File explorer" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle explorer" })
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
@@ -160,10 +163,9 @@ map("n", "<leader>fm", function()
   conform.format({ bufnr = vim.api.nvim_get_current_buf(), async = true, lsp_fallback = true })
 end, { desc = "LSP and Conform formatting" })
 
--- cdProject
-map("n", "<leader>cd", "<cmd>CdProject<CR>", { desc = "List all projects" })
-map("n", "<leader>ci", "<cmd>CdProjectAdd<CR>", { desc = "Add this dir as a project" })
-map("n", "<leader>pd", "<cmd>CdProjectDelete<CR>", { desc = "Delete this dir as a project" })
+-- Project management
+map("n", "<leader>cd", "<cmd>NeovimProjectHistory<CR>", { desc = "Show project history" })
+map("n", "<leader>pd", "<cmd>NeovimProjectDiscover alphabetical_path<CR>", { desc = "Find new projects" })
 -- LSP mappings
 
 map("n", "gD", function()

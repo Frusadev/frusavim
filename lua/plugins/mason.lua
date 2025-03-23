@@ -28,7 +28,8 @@ return {
         "vtsls",
         "dockerfile-language-server",
         "clangd",
-        "clang-format"
+        "clang-format",
+        "autopep8",
       },
     },
     config = function(_, opts)

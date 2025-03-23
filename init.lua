@@ -7,4 +7,3 @@ else
   require("settings")
   require("autocmds")
 end
-vim.opt.termguicolors = true

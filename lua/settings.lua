@@ -24,22 +24,23 @@ o.numberwidth = 2
 o.ruler = true
 
 -- UI
-  -- Window borders
+-- Window borders
 opt.fillchars:append({ vert = "▏" })
 opt.fillchars:append({ horiz = "⎯" })
-  -- These '~' on empty lines
+-- These '~' on empty lines
 opt.fillchars:append({ eob = " " })
 
-  -- For pasting from system clipboard
+-- For pasting from system clipboard
 opt.clipboard:append("unnamedplus")
 
+local theme = "tokyonight-night"
 
 -- Running autocmds (applying frusavim settings)
 -- Colorscheme
 api.nvim_create_autocmd("VimEnter", {
-	callback = function()
+  callback = function()
     vim.defer_fn(function()
-			cmd("colorscheme tokyonight-night")
-		end, 200)
-	end,
+      cmd("colorscheme " .. theme)
+    end, 200)
+  end,
 })
