@@ -33,6 +33,10 @@ opt.fillchars:append({ eob = " " })
 -- For pasting from system clipboard
 opt.clipboard:append("unnamedplus")
 
+-- Spell checking
+-- o.spell = true
+-- o.spelllang = "en_us"
+
 local theme = "tokyonight-night"
 
 -- Running autocmds (applying frusavim settings)
