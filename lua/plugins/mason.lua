@@ -30,6 +30,7 @@ return {
         "clangd",
         "clang-format",
         "autopep8",
+        "svelte-language-server",
       },
     },
     config = function(_, opts)

@@ -4,6 +4,7 @@ local plugins = {
     opts = {
       projects = { -- define project roots
         "~/Workspace/Projects/Personal/*",
+        "~/Workspace/Projects/professional/*",
         "~/Workspace/Projects/Forks/*",
         "~/.config/*",
       },

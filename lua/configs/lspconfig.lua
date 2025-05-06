@@ -5,14 +5,15 @@ local servers = {
   "lua_ls",
   "gopls",
   "cssls",
-  "vtsls",
   "nimls",
   "v_analyzer",
   "tailwindcss",
   "phpactor",
   "dockerls",
   "gleam",
-  "clangd"
+  "clangd",
+  "vtsls",
+  "svelte",
 }
 
 lspconfig["basedpyright"].setup({
@@ -25,7 +26,7 @@ lspconfig["basedpyright"].setup({
 })
 
 lspconfig["tailwindcss"].setup({
-  filetypes = {"html", "typescriptreact", "javascriptreact", "svelte", "vue"},
+  filetypes = { "html", "typescriptreact", "javascriptreact", "svelte", "vue" },
 })
 -- lsps with default config
 for _, lsp in ipairs(servers) do
