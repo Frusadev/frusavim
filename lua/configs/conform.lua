@@ -15,6 +15,7 @@ local options = {
     php = { "phpcbf" },
     gleam = { "gleam" },
     cpp = { "clang-format" },
+    nim = { "nimpretty" },
   },
 
   -- format_on_save = {
@@ -51,6 +52,14 @@ local options = {
           unsafeParameterDecoratorsEnabled = true,
         },
       },
+    },
+    nimpretty = {
+      args = {
+        "--indent:3",
+        "--maxLineLen:80",
+        "$FILENAME",
+      },
+      stdin = false,
     },
   },
 }

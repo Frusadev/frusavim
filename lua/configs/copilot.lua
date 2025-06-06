@@ -31,15 +31,8 @@ local config = {
     },
   },
   filetypes = {
-    yaml = false,
-    markdown = false,
-    help = false,
-    gitcommit = false,
-    gitrebase = false,
-    hgcommit = false,
-    svn = false,
-    cvs = false,
-    ["."] = false,
+    ["*"] = true,
+    python = false,
   },
   copilot_node_command = "node", -- Node.js version must be > 18.x
   server_opts_overrides = {},

@@ -6,6 +6,7 @@ local plugins = {
         "~/Workspace/Projects/Personal/*",
         "~/Workspace/Projects/professional/*",
         "~/Workspace/Projects/Forks/*",
+        "~/Workspace/Teaching/LOSLC/*",
         "~/.config/*",
       },
       picker = {
