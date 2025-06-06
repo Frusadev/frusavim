@@ -53,24 +53,33 @@ map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
 -- Buffer navigation
-map("n", "<tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
-map("n", "<S-tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto next" })
--- Buffer movement
-map("n", "<C-tab>", "<Cmd>BufferLineMovePrev<CR>")
-map("n", "<C-S-tab>", "<Cmd>BufferLineMoveNext<CR>")
+map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
+map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto previous" })
 -- Close buffer
 map("n", "<leader>x", "<Cmd>bdelete<CR>", { desc = "buffer close" })
 
--- Buffer navigation with numbers
-map("n", "<C-1>", "<Cmd>BufferLineGotoBuffer 1<CR>")
-map("n", "<C-2>", "<Cmd>BufferLineGotoBuffer 2<CR>")
-map("n", "<C-3>", "<Cmd>BufferLineGotoBuffer 3<CR>")
-map("n", "<C-4>", "<Cmd>BufferLineGotoBuffer 4<CR>")
-map("n", "<C-5>", "<Cmd>BufferLineGotoBuffer 5<CR>")
-map("n", "<C-6>", "<Cmd>BufferLineGotoBuffer 6<CR>")
-map("n", "<C-7>", "<Cmd>BufferLineGotoBuffer 7<CR>")
-map("n", "<C-8>", "<Cmd>BufferLineGotoBuffer 8<CR>")
-map("n", "<C-9>", "<Cmd>BufferLineGotoBuffer 9<CR>")
+-- Buffer navigation with numbers (using leader key for better compatibility)
+local function goto_buffer_by_index(index)
+  local buffers = {}
+  for buf = 1, vim.fn.bufnr('$') do
+    if vim.fn.buflisted(buf) == 1 then
+      table.insert(buffers, buf)
+    end
+  end
+  if buffers[index] then
+    vim.cmd("buffer " .. buffers[index])
+  end
+end
+
+map("n", "<leader>1", function() goto_buffer_by_index(1) end, { desc = "go to 1st buffer" })
+map("n", "<leader>2", function() goto_buffer_by_index(2) end, { desc = "go to 2nd buffer" })
+map("n", "<leader>3", function() goto_buffer_by_index(3) end, { desc = "go to 3rd buffer" })
+map("n", "<leader>4", function() goto_buffer_by_index(4) end, { desc = "go to 4th buffer" })
+map("n", "<leader>5", function() goto_buffer_by_index(5) end, { desc = "go to 5th buffer" })
+map("n", "<leader>6", function() goto_buffer_by_index(6) end, { desc = "go to 6th buffer" })
+map("n", "<leader>7", function() goto_buffer_by_index(7) end, { desc = "go to 7th buffer" })
+map("n", "<leader>8", function() goto_buffer_by_index(8) end, { desc = "go to 8th buffer" })
+map("n", "<leader>9", function() goto_buffer_by_index(9) end, { desc = "go to 9th buffer" })
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
