@@ -42,11 +42,12 @@
 
 ## 📸 Preview
 
+![Frusavim](https://github.com/user-attachments/assets/86d5881b-b0a2-432e-a36d-f9795330ad55)
 
 ## 🚀 Installation
 
 ### Prerequisites
-- **Neovim 0.9+** - [Install Neovim](https://neovim.io/)
+- **Neovim 0.10+** - [Install Neovim](https://neovim.io/)
 - **Git** - For cloning repositories
 - **Node.js 18+** - For LSP servers and Copilot
 - **Python 3.8+** - For Python development features
