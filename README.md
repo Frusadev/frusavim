@@ -2,7 +2,7 @@
 
 > **A modern, feature-rich Neovim configuration designed for productivity and ease of use**
 
-[![Neovim Version](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg)](https://github.com/neovim/neovim)
+[![Neovim Version](https://img.shields.io/badge/Neovim-0.10+-blueviolet.svg)](https://github.com/neovim/neovim)
 [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blue.svg)](https://lua.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
