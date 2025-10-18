@@ -4,8 +4,10 @@ local plugins = {
     opts = {
       projects = { -- define project roots
         "~/Workspace/Projects/Personal/*",
-        "~/Workspace/Projects/professional/*",
+        "~/Workspace/Projects/Pro/*",
+        "~/Workspace/Projects/Pro/waitly/*",
         "~/Workspace/Projects/Forks/*",
+        "~/Workspace/Teaching/LOSLC/*",
         "~/Workspace/Teaching/LOSLC/*",
         "~/.config/*",
       },
