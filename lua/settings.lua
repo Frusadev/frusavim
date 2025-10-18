@@ -37,12 +37,14 @@ opt.clipboard:append("unnamedplus")
 -- o.spell = true
 -- o.spelllang = "en_us"
 
-local theme = "tokyonight-night"
+local theme = "tokyodark"
 
 -- Running autocmds (applying frusavim settings)
 -- Colorscheme
-api.nvim_create_autocmd("VimEnter", {
+api.nvim_create_autocmd("User", {
+  pattern = "LazyDone",
   callback = function()
+    cmd("colorscheme " .. theme)
     vim.defer_fn(function()
       cmd("colorscheme " .. theme)
     end, 200)

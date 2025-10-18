@@ -1,9 +1,12 @@
 local themes = {
   {
-    "folke/tokyonight.nvim",
+    "vague2k/vague.nvim",
+    lazy = false,
+  },
+  {
+    "ilof2/posterpole.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
   },
   { "slugbyte/lackluster.nvim" },
   { "Shadorain/shadotheme" },
@@ -46,9 +49,25 @@ local themes = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    config = function()
-      require("configs.themes.catppuccin")
-    end,
+    opts = {
+      color_overrides = {
+        mocha = {
+          base = "#11111b",
+          red = "#d5788c",
+          maroon = "#da98a2",
+        },
+      },
+      integrations = {
+        telescope = {
+          enabled = true,
+          style = "nvchad",
+        },
+        dropbar = {
+          enabled = true,
+          color_mode = true,
+        },
+      },
+    },
   },
   {
     "rebelot/kanagawa.nvim",
