@@ -1,0 +1,5 @@
+return {
+  {
+    "isobit/vim-caddyfile",
+  },
+}
