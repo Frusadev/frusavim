@@ -41,10 +41,10 @@ map("n", "<leader>fm", function()
   require("conform").format({ lsp_fallback = true })
 end, { desc = "format files" })
 
--- python venv switch
-map("n", "<leader>cv", "<cmd>VenvSelect<cr>", { desc = "Change python venv" })
--- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+-- -- python venv switch
+-- map("n", "<leader>cv", "<cmd>VenvSelect<cr>", { desc = "Change python venv" })
+-- -- global lsp mappings
+-- map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 
 -- Lazygit
 map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
@@ -57,6 +57,8 @@ map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
 map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto previous" })
 -- Close buffer
 map("n", "<leader>x", "<Cmd>bdelete<CR>", { desc = "buffer close" })
+map("n", "<leader>cba", "<Cmd>bufdo bdelete<CR>", { desc = "buffer close all" })
+map("n", "<leader>cbo", "<Cmd>%bd|e#<CR>", { desc = "buffer close all except the current one" })
 
 -- Buffer navigation with numbers (using leader key for better compatibility)
 local function goto_buffer_by_index(index)
@@ -88,7 +90,7 @@ map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
 map("n", "<leader>fe", function()
   require("telescope").extensions.file_browser.file_browser()
 end, { desc = "File explorer" })
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle explorer" })
+map("n", "<C-n>", "<cmd>Neotree toggle<CR>", { desc = "Toggle explorer" })
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })

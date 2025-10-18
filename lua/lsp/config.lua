@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local servers = {
   "html",
   "basedpyright",
@@ -14,9 +13,10 @@ local servers = {
   "clangd",
   "vtsls",
   "svelte",
+  "docker_compose_language_service",
 }
 
-lspconfig["basedpyright"].setup({
+vim.lsp.enable("basedpyright", {
   settings = {
     python = {
       venvPath = "~/Workspace/sys/python/env/",
@@ -25,10 +25,10 @@ lspconfig["basedpyright"].setup({
   },
 })
 
-lspconfig["tailwindcss"].setup({
+vim.lsp.enable("tailwindcss", {
   filetypes = { "html", "typescriptreact", "javascriptreact", "svelte", "vue" },
 })
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({})
+  vim.lsp.enable(lsp, {})
 end
