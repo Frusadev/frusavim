@@ -1,12 +1,5 @@
 local plugins = {
   {
-    "sphamba/smear-cursor.nvim",
-    opts = {},
-    config = function()
-      require("configs.cursor")
-    end,
-  },
-  {
     "brenton-leighton/multiple-cursors.nvim",
     version = "*",
     opts = {},
@@ -165,44 +158,6 @@ local plugins = {
     config = function(_, opts) end,
   },
   {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-
-    config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-    end,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
-    },
-
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-
-      dap.listeners.after.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-
-      dap.listeners.after.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end,
-  },
-  { "heysokam/nim.vim", lazy = false },
-  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -228,13 +183,6 @@ local plugins = {
     end,
     config = function()
       return require("configs.snips")
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {},
-    config = function()
-      require("configs.lspconfig")
     end,
   },
 }
