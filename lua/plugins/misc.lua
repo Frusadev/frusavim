@@ -1,3 +1,1 @@
-return {
-  { "danilamihailov/beacon.nvim" },
-}
+return {}
