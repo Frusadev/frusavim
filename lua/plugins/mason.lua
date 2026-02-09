@@ -21,6 +21,7 @@ return {
         "clangd",
         "clang-format",
         "autopep8",
+        "typescript-language-server",
       },
     },
     config = function(_, opts)

@@ -8,7 +8,7 @@ local servers = {
   "dockerls",
   "gleam",
   "clangd",
-  "vtsls",
+  "typescript-language-server",
   "docker_compose_language_service",
 }
 
