@@ -4,15 +4,11 @@ local servers = {
   "lua_ls",
   "gopls",
   "cssls",
-  "nimls",
-  "v_analyzer",
   "tailwindcss",
-  "phpactor",
   "dockerls",
   "gleam",
   "clangd",
   "vtsls",
-  "svelte",
   "docker_compose_language_service",
 }
 

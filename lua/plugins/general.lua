@@ -34,18 +34,6 @@ local plugins = {
     end,
   },
   {
-    "luckasRanarison/tailwind-tools.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = false,
-  },
-  {
-    "petertriho/nvim-scrollbar",
-    config = function()
-      require("configs.scroll")
-    end,
-    lazy = false,
-  },
-  {
     "rmagatti/goto-preview",
     config = function() end,
     event = "VeryLazy",
@@ -59,10 +47,6 @@ local plugins = {
       "MunifTanjim/nui.nvim",
     },
     event = "VeryLazy",
-  },
-  {
-    "https://github.com/mlaursen/vim-react-snippets.git",
-    lazy = false,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -159,31 +143,32 @@ local plugins = {
   },
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end,
   },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/nvim-cmp" },
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
-      "Frusadev/frusadev-friendly-snippets",
+      "rafamadriz/friendly-snippets",
       "saadparwaiz1/cmp_luasnip",
       "mlaursen/vim-react-snippets",
     },
-
-    opts = function()
-      require("vim-react-snippets").lazy_load()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end,
+    version = "v2.*",
+    build = "make install_jsregexp",
     config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
       return require("configs.snips")
     end,
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("configs.scroll")
+    end,
+    lazy = false,
   },
 }
 

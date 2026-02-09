@@ -1,16 +1,9 @@
 return {
   {
     "williamboman/mason.nvim",
-    -- cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-    --    config = function()
-    -- -- require("configs.mason")
-    --    end,
     opts = {
       ensure_installed = {
         "basedpyright",
-        "pyright",
-        "nimlsp",
-        "nimlangserver",
         "flake8",
         "htmlhint",
         "html-lsp",
@@ -18,10 +11,8 @@ return {
         "ruff",
         "jsonlint",
         "jq",
-        "taplo",
         "gopls",
         "lua-language-server",
-        "v-analyzer",
         "tailwindcss-language-server",
         "stylua",
         "css-lsp",
@@ -30,7 +21,6 @@ return {
         "clangd",
         "clang-format",
         "autopep8",
-        "svelte-language-server",
       },
     },
     config = function(_, opts)

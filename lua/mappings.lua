@@ -90,7 +90,7 @@ map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
 map("n", "<leader>fe", function()
   require("telescope").extensions.file_browser.file_browser()
 end, { desc = "File explorer" })
-map("n", "<C-n>", "<cmd>Neotree toggle<CR>", { desc = "Toggle explorer" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle explorer" })
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
