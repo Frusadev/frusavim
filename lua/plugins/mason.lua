@@ -22,6 +22,7 @@ return {
         "clang-format",
         "autopep8",
         "typescript-language-server",
+        "rust-analyzer",
       },
     },
     config = function(_, opts)
