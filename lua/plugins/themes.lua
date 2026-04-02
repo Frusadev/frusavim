@@ -90,6 +90,17 @@ local themes = {
     "tiagovla/tokyodark.nvim",
     opts = {},
   },
+  {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "vague-theme/vague.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  { "kepano/flexoki-neovim", name = "flexoki" },
 }
 
 return themes
