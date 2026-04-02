@@ -8,7 +8,7 @@ local servers = {
   "dockerls",
   "gleam",
   "clangd",
-  "ts_ls",
+  "vtsls",
   "docker_compose_language_service",
   "rust_analyzer",
 }
