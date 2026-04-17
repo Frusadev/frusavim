@@ -2,13 +2,10 @@ local plugins = {
   {
     "coffebar/neovim-project",
     opts = {
-      projects = { -- define project roots
+      projects = {
         "~/Workspace/Projects/Personal/*",
         "~/Workspace/Projects/Pro/*",
-        "~/Workspace/Projects/Pro/waitly/*",
         "~/Workspace/Projects/Forks/*",
-        "~/Workspace/Teaching/LOSLC/*",
-        "~/Workspace/Teaching/LOSLC/*",
         "~/.config/*",
       },
       picker = {
@@ -17,7 +14,7 @@ local plugins = {
     },
     init = function()
       -- enable saving the state of plugins in the session
-      vim.opt.sessionoptions:append("globals") -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
+      vim.opt.sessionoptions:append("globals")
     end,
     dependencies = {
       { "nvim-lua/plenary.nvim" },
