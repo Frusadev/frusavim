@@ -23,6 +23,7 @@ return {
         "autopep8",
         "typescript-language-server",
         "rust-analyzer",
+        "nimlsp",
       },
     },
     config = function(_, opts)

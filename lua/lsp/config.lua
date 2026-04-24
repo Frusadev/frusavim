@@ -11,6 +11,7 @@ local servers = {
   "vtsls",
   "docker_compose_language_service",
   "rust_analyzer",
+  "nimls",
 }
 
 vim.lsp.enable("basedpyright", {
