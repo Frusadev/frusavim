@@ -25,6 +25,8 @@ return {
         "rust-analyzer",
         "nimlangserver",
         "intelephense",
+        "phpstan",
+        "pint",
       },
     },
     config = function(_, opts)
