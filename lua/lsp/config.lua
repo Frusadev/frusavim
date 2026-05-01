@@ -12,6 +12,7 @@ local servers = {
   "docker_compose_language_service",
   "rust_analyzer",
   "nim_langserver",
+  "intelephense",
 }
 
 vim.lsp.enable("basedpyright", {

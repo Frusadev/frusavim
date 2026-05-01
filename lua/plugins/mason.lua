@@ -24,6 +24,7 @@ return {
         "typescript-language-server",
         "rust-analyzer",
         "nimlangserver",
+        "intelephense",
       },
     },
     config = function(_, opts)
