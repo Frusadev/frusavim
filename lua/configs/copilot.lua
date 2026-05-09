@@ -32,6 +32,7 @@ local config = {
   },
   filetypes = {
     ["*"] = true,
+    rust = false,
     sh = false,
     dotenv = false,
   },

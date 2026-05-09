@@ -24,6 +24,7 @@ return {
         "typescript-language-server",
         "rust-analyzer",
         "nimlangserver",
+        "nimlsp",
         "intelephense",
         "phpstan",
         "pint",

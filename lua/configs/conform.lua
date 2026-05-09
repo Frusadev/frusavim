@@ -55,7 +55,7 @@ local options = {
     },
     nimpretty = {
       args = {
-        "--indent:3",
+        "--indent:2",
         "--maxLineLen:80",
         "$FILENAME",
       },
