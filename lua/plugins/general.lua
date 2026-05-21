@@ -48,19 +48,19 @@ local plugins = {
     },
     event = "VeryLazy",
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function()
-      return require("configs.treesitter")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-    event = "VeryLazy",
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   branch = "main",
+  --   opts = function()
+  --     return require("configs.treesitter")
+  --   end,
+  --   config = function(_, opts)
+  --     require("nvim-treesitter.configs").setup(opts)
+  --   end,
+  --   event = "VeryLazy",
+  -- },
   {
     "windwp/nvim-ts-autotag",
-    dependencies = "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()
       require("nvim-ts-autotag").setup({

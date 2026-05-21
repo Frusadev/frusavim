@@ -101,6 +101,12 @@ local themes = {
     priority = 1000,
   },
   { "kepano/flexoki-neovim", name = "flexoki" },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 }
 
 return themes
