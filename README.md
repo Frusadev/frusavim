@@ -2,43 +2,43 @@
 
 > **A modern, feature-rich Neovim configuration designed for productivity and ease of use**
 
-[![Neovim Version](https://img.shields.io/badge/Neovim-0.10+-blueviolet.svg)](https://github.com/neovim/neovim)
+[![Neovim Version](https://img.shields.io/badge/Neovim-0.12+-blueviolet.svg)](https://github.com/neovim/neovim)
 [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blue.svg)](https://lua.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## ✨ Features
 
 ### 🎨 **User Interface**
-- **24+ Premium Themes** - Tokyo Night, Catppuccin, Evergarden, Nord, and many more
-- **Modern StatusLine** - Beautiful Lualine with Git integration and LSP status
-- **Smart Buffer Management** - BufferLine with tabs and quick navigation
-- **File Explorer** - NvimTree with Git status indicators
-- **Floating Terminal** - Integrated terminal with multiple layouts
+- **24+ Premium Themes** - Catppuccin, Evergarden, Tokyodark, Tokyo Night, Nord, Kanagawa, Everforest, Melting, Vague, Flexoki, and more
+- **Modern StatusLine** - Lualine with Git + LSP status (Tokyodark theme)
+- **Smart Buffer Management** - BufferLine tabs with diagnostics
+- **Dual File Explorers** - NvimTree (`<C-n>`) + Neo-tree with Git/diagnostics
+- **Command UI Enhancements** - Noice.nvim for messages and cmdline UI
+- **Indent Guides + Scrollbar** - indent-blankline + nvim-scrollbar
+- **Floating Terminal** - nvterm with horizontal/vertical/float layouts
 
 ### 🧠 **AI-Powered Development**
 - **GitHub Copilot** - Intelligent code completion and suggestions
-- **Avante.nvim** - Advanced AI assistant with Gemini integration
-- **Smart Snippets** - LuaSnip with custom snippet collections
+- **Smart Snippets** - LuaSnip with friendly-snippets
 
 ### 🔧 **Language Support & LSP**
-- **25+ Language Servers** - Python, JavaScript/TypeScript, Go, Rust, Nim, V, and more
-- **Auto-formatting** - Conform.nvim with language-specific formatters
-- **Linting** - Real-time error detection with nvim-lint
-- **Debug Support** - DAP integration for Python and other languages
-- **Treesitter** - Advanced syntax highlighting and code parsing
+- **Built-in LSP (Neovim 0.12)** - basedpyright, lua_ls, vtsls, gopls, rust-analyzer, nimlangserver, intelephense, gleam, dockerls, clangd, and more
+- **Auto-formatting** - Conform.nvim with Biome, Ruff, Stylua, gofmt, nimpretty, pint, clang-format, and more
+- **Linting** - nvim-lint with Biome, flake8, htmlhint, jsonlint, phpstan
+- **DAP Core** - nvim-dap installed (configure adapters per language)
 
 ### 📁 **Project Management**
-- **Smart Project Detection** - Automatic project root detection
-- **Session Management** - Restore your workspace exactly as you left it
-- **Git Integration** - LazyGit, telescope git commands, and diff highlighting
-- **Workspace Navigation** - Quick project switching and file finding
+- **Project Switching + Sessions** - neovim-project with session restore
+- **Git Integration** - LazyGit, Telescope git commands, and diff highlighting
+- **Workspace Navigation** - Project history + file pickers
 
 ### ⚡ **Performance & Productivity**
 - **Lazy Loading** - Fast startup with lazy.nvim plugin management
 - **Fuzzy Finding** - Telescope for files, buffers, and live grep
-- **Auto-completion** - Intelligent completion with multiple sources
+- **Auto-completion** - nvim-cmp with LSP + snippets
 - **Multiple Cursors** - Edit multiple locations simultaneously
-- **Surround Operations** - Quick text manipulation with nvim-surround
+- **Auto-save** - Background saves with auto-save.nvim
+- **Surround + Autopairs** - nvim-surround and nvim-autopairs
 
 ## 📸 Preview
 
@@ -47,11 +47,13 @@
 ## 🚀 Installation
 
 ### Prerequisites
-- **Neovim 0.10+** - [Install Neovim](https://neovim.io/)
+- **Neovim 0.12+** - [Install Neovim](https://neovim.io/)
 - **Git** - For cloning repositories
 - **Node.js 18+** - For LSP servers and Copilot
 - **Python 3.8+** - For Python development features
 - **Ripgrep** - For telescope live grep functionality
+- **Tree-sitter CLI** - Required for tree-sitter-manager parser installs
+- **LazyGit (optional)** - For the LazyGit integration
 
 ### Quick Setup
 
@@ -70,7 +72,6 @@ nvim
 
 1. **Install Language Servers**: Run `:MasonInstallAll` to install all configured LSP servers
 2. **Setup Copilot**: Run `:Copilot auth` to authenticate GitHub Copilot
-3. **Configure Python**: Set your Python virtual environment with `<leader>cv`
 
 ## ⌨️ Key Mappings
 
@@ -117,7 +118,7 @@ Buffers & Windows:       Terminal & Git:           Customization:
 ├─ Tab    Next buffer    ├─ Alt+h  H-terminal      ├─ th  Themes
 ├─ S-Tab  Prev buffer    ├─ Alt+v  V-terminal      ├─ n   Line numbers
 ├─ x      Close buffer   ├─ Alt+i  F-terminal      ├─ rn  Relative nums
-├─ v      V-split        ├─ lg     LazyGit         └─ cv  Python venv
+├─ v      V-split        ├─ lg     LazyGit         └─ as  Auto-save
 └─ h      H-split        └─ Ctrl+x Exit terminal
 ```
 
@@ -127,9 +128,10 @@ Buffers & Windows:       Terminal & Git:           Customization:
 
 FrusaVim comes with 24+ carefully selected themes:
 
-- **Tokyo Night** (Default) - Modern dark theme
-- **Catppuccin** - Soothing pastel theme  
+- **Catppuccin** - Soothing pastel theme
 - **Evergarden** - Nature-inspired colors
+- **Tokyodark** - Modern dark theme
+- **Tokyo Night** - Iconic neon palette
 - **Nord** - Arctic-inspired palette
 - **Kanagawa** - Japanese aesthetics
 - **One Dark Pro** - Atom's iconic theme
@@ -139,33 +141,35 @@ FrusaVim comes with 24+ carefully selected themes:
 - **Ayu** - Clean and elegant
 - **NeoSolarized** - Classic Solarized
 - **Darkrose** - Rose-tinted dark theme
-- And many more...
+- **Vague** - Soft, low-contrast theme
+- **PosterPole** - Bold vintage palette
+- **Flexoki** - Warm, balanced colors
+- **Oldworld** - Vintage-inspired palette
+- **Shadotheme**, **Miramare**, **Spacegray**, **Xresources**, **Agila**, and more
 
 Use `<leader>th` to browse and switch themes instantly!
 
 ## 🛠️ Language Support
 
 ### Fully Supported Languages
-- **Python** - BasedPyright, Ruff formatting, virtual env support
-- **JavaScript/TypeScript** - Biome, ESLint, Prettier
-- **Go** - gopls, auto-formatting
-- **Rust** - rust-analyzer, cargo integration  
+- **Python** - basedpyright, Ruff formatting
+- **JavaScript/TypeScript** - vtsls, Biome formatting/linting
+- **Go** - gopls, gofmt
+- **Rust** - rust-analyzer
 - **Lua** - lua-language-server, stylua formatting
-- **HTML/CSS** - Auto-completion, formatting
-- **JSON/TOML** - Validation, formatting
-- **Nim** - Language server, custom formatting
-- **V Language** - v-analyzer support
+- **HTML/CSS** - html-lsp, cssls, Tailwind CSS
+- **JSON/TOML** - Validation + formatting (jsonlint, jq, taplo)
+- **Nim** - nimlangserver, nimpretty formatting
+- **Gleam** - gleam LSP + formatter
 - **C/C++** - clangd, clang-format
-- **PHP** - phpactor, formatting
-- **Svelte** - Full framework support
-- **Gleam** - Modern functional language
-- **Docker** - Dockerfile support
+- **PHP** - intelephense, phpstan, pint
+- **Docker** - dockerls + docker compose LSP
 
 ### Auto-installed Tools
-- Language servers via Mason
-- Formatters (Biome, Prettier, Black, etc.)
-- Linters (ESLint, Flake8, etc.)
-- Debug adapters (Python DAP)
+- Language servers via Mason (basedpyright, vtsls, gopls, rust-analyzer, nimlangserver, intelephense, clangd, dockerls)
+- Formatters (Biome, Ruff, Stylua, gofmt, nimpretty, pint, clang-format)
+- Linters (Biome, flake8, htmlhint, jsonlint, phpstan)
+- Debug core (nvim-dap)
 
 ## 📁 Project Structure
 
@@ -177,23 +181,36 @@ Use `<leader>th` to browse and switch themes instantly!
 │   ├── settings.lua         # Core Neovim settings
 │   ├── mappings.lua         # Key mappings
 │   ├── autocmds.lua         # Auto commands
+│   ├── lsp/
+│   │   └── config.lua        # LSP setup (Neovim 0.12)
 │   ├── config/
-│   │   └── lazy.lua         # Plugin manager config
-│   ├── plugins/             # Plugin specifications
-│   │   ├── themes.lua       # Theme plugins
-│   │   ├── lsp.lua          # LSP plugins
-│   │   ├── telescope.lua    # Fuzzy finder
-│   │   ├── ai.lua           # AI assistants
+│   │   ├── lazy.lua          # Plugin manager config
+│   │   └── lazycode.lua      # VSCode-only plugins
+│   ├── code/
+│   │   └── init.lua          # VSCode entry point
+│   ├── plugins/              # Plugin specifications
+│   │   ├── ai.lua            # AI assistants
+│   │   ├── essential.lua     # Core UX plugins
+│   │   ├── general.lua       # UI + tooling
+│   │   ├── mason.lua         # LSP/tool installers
+│   │   ├── neotree.lua       # Neo-tree explorer
+│   │   ├── nvimtree.lua      # NvimTree explorer
+│   │   ├── telescope.lua     # Fuzzy finder
+│   │   ├── themes.lua        # Theme plugins
 │   │   └── ...
-│   └── configs/             # Plugin configurations
-│       ├── conform.lua      # Formatter config
-│       ├── lspconfig.lua    # LSP settings
-│       ├── telescope.lua    # Search config
+│   └── configs/              # Plugin configurations
+│       ├── cmp.lua           # Completion config
+│       ├── conform.lua       # Formatter config
+│       ├── lualine.lua       # Statusline config
+│       ├── neotree.lua       # Neo-tree config
+│       ├── nvim-lint.lua     # Linting config
+│       ├── term.lua          # Terminal config
 │       └── ...
-└── ftplugin/               # Filetype-specific settings
-    ├── python.lua
-    ├── javascript.lua
-    └── ...
+└── ftplugin/                # Filetype-specific settings
+    ├── go.lua
+    ├── nim.lua
+    ├── rust.lua
+    └── text.lua
 ```
 
 ## 🔧 Customization
@@ -212,23 +229,23 @@ map("n", "<leader>custom", ":YourCommand<CR>", { desc = "Your description" })
 ```
 
 ### Language Server Configuration
-Modify `lua/configs/lspconfig.lua` to add new language servers:
+Modify `lua/lsp/config.lua` to add or remove language servers:
 
 ```lua
-lspconfig["your_lsp"].setup({
+vim.lsp.enable("your_lsp", {
   -- your configuration
 })
 ```
 
-### Project Patterns
-Customize project detection in `lua/configs/proj.lua`:
+### Project Paths
+Customize project discovery in `lua/plugins/essential.lua` (neovim-project):
 
 ```lua
-project_dir_pattern = {
-  ".git",
-  "package.json",
-  "Cargo.toml",
-  -- add your patterns
+projects = {
+  "~/Workspace/Projects/Personal/*",
+  "~/Workspace/Projects/Pro/*",
+  "~/Workspace/Projects/Forks/*",
+  "~/.config/*",
 }
 ```
 
