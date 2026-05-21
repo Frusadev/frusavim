@@ -42,7 +42,9 @@
 
 ## 📸 Preview
 
-![Frusavim](https://github.com/user-attachments/assets/86d5881b-b0a2-432e-a36d-f9795330ad55)
+<img width="1920" height="1080" alt="Screenshot From 2026-05-21 23-55-49" src="https://github.com/user-attachments/assets/c661b5de-0753-4864-90a9-ddc73357c273" />
+<img width="1920" height="1080" alt="Screenshot From 2026-05-21 23-56-31" src="https://github.com/user-attachments/assets/d0429dfd-ca42-41e2-8e8a-54c843ce0057" />
+
 
 ## 🚀 Installation
 
