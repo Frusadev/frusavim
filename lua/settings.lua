@@ -37,7 +37,7 @@ opt.clipboard:append("unnamedplus")
 -- o.spell = true
 -- o.spelllang = "en_us"
 
-local theme = "oldworld"
+local theme = "tokyodark"
 
 -- Running autocmds (applying frusavim settings)
 -- Colorscheme
