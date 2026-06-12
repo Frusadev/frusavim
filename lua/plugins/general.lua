@@ -170,6 +170,12 @@ local plugins = {
     end,
     lazy = false,
   },
+  {
+    "https://github.com/kremovtort/tabterm.nvim",
+    config = function()
+      require("tabterm").setup()
+    end,
+  },
 }
 
 return plugins

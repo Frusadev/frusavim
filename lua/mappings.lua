@@ -63,7 +63,7 @@ map("n", "<leader>cbo", "<Cmd>%bd|e#<CR>", { desc = "buffer close all except the
 -- Buffer navigation with numbers (using leader key for better compatibility)
 local function goto_buffer_by_index(index)
   local buffers = {}
-  for buf = 1, vim.fn.bufnr('$') do
+  for buf = 1, vim.fn.bufnr("$") do
     if vim.fn.buflisted(buf) == 1 then
       table.insert(buffers, buf)
     end
@@ -73,15 +73,33 @@ local function goto_buffer_by_index(index)
   end
 end
 
-map("n", "<leader>1", function() goto_buffer_by_index(1) end, { desc = "go to 1st buffer" })
-map("n", "<leader>2", function() goto_buffer_by_index(2) end, { desc = "go to 2nd buffer" })
-map("n", "<leader>3", function() goto_buffer_by_index(3) end, { desc = "go to 3rd buffer" })
-map("n", "<leader>4", function() goto_buffer_by_index(4) end, { desc = "go to 4th buffer" })
-map("n", "<leader>5", function() goto_buffer_by_index(5) end, { desc = "go to 5th buffer" })
-map("n", "<leader>6", function() goto_buffer_by_index(6) end, { desc = "go to 6th buffer" })
-map("n", "<leader>7", function() goto_buffer_by_index(7) end, { desc = "go to 7th buffer" })
-map("n", "<leader>8", function() goto_buffer_by_index(8) end, { desc = "go to 8th buffer" })
-map("n", "<leader>9", function() goto_buffer_by_index(9) end, { desc = "go to 9th buffer" })
+map("n", "<leader>1", function()
+  goto_buffer_by_index(1)
+end, { desc = "go to 1st buffer" })
+map("n", "<leader>2", function()
+  goto_buffer_by_index(2)
+end, { desc = "go to 2nd buffer" })
+map("n", "<leader>3", function()
+  goto_buffer_by_index(3)
+end, { desc = "go to 3rd buffer" })
+map("n", "<leader>4", function()
+  goto_buffer_by_index(4)
+end, { desc = "go to 4th buffer" })
+map("n", "<leader>5", function()
+  goto_buffer_by_index(5)
+end, { desc = "go to 5th buffer" })
+map("n", "<leader>6", function()
+  goto_buffer_by_index(6)
+end, { desc = "go to 6th buffer" })
+map("n", "<leader>7", function()
+  goto_buffer_by_index(7)
+end, { desc = "go to 7th buffer" })
+map("n", "<leader>8", function()
+  goto_buffer_by_index(8)
+end, { desc = "go to 8th buffer" })
+map("n", "<leader>9", function()
+  goto_buffer_by_index(9)
+end, { desc = "go to 9th buffer" })
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
@@ -128,6 +146,23 @@ map(toggle_modes, "<A-i>", function()
   terminal.toggle("float")
 end)
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+
+-- Terminal : Tabterm
+map("n", "<leader>tt", function()
+  require("tabterm").toggle()
+end, { desc = "Open terminal in new tab" })
+
+map("n", "<leader>tn", function()
+  require("tabterm").new_shell()
+end, { desc = "Open terminal in new tab" })
+
+map("n", "<leader>tc", function()
+  require("tabterm").new_command()
+end, { desc = "Open terminal in new tab" })
+
+map("n", "<leader>tt", function()
+  require("tabterm").toggle()
+end, { desc = "Open terminal in new tab" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
