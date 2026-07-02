@@ -13,6 +13,7 @@ local servers = {
   "rust_analyzer",
   "nim_langserver",
   "intelephense",
+  "svelte",
 }
 
 vim.lsp.enable("basedpyright", {

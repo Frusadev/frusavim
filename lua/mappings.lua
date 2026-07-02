@@ -2,6 +2,7 @@
 local map = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.localleader = " "
+local all_modes = { "n", "i", "v", "x", "s", "o", "c", "t" }
 
 if vim.g.neovide then
   -- Mapping for Ctrl+Shift+V to paste
@@ -148,7 +149,7 @@ end)
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- Terminal : Tabterm
-map("n", "<leader>tt", function()
+map(all_modes, "<A-t>", function()
   require("tabterm").toggle()
 end, { desc = "Open terminal in new tab" })
 
@@ -158,10 +159,6 @@ end, { desc = "Open terminal in new tab" })
 
 map("n", "<leader>tc", function()
   require("tabterm").new_command()
-end, { desc = "Open terminal in new tab" })
-
-map("n", "<leader>tt", function()
-  require("tabterm").toggle()
 end, { desc = "Open terminal in new tab" })
 
 -- whichkey

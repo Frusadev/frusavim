@@ -28,6 +28,7 @@ return {
         "intelephense",
         "phpstan",
         "pint",
+        "svelte-language-server",
       },
     },
     config = function(_, opts)
