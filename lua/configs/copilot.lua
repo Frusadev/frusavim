@@ -35,6 +35,7 @@ local config = {
     rust = false,
     sh = false,
     dotenv = false,
+    env = false,
   },
   copilot_node_command = "node", -- Node.js version must be > 18.x
   server_opts_overrides = {},

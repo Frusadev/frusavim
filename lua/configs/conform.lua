@@ -16,6 +16,7 @@ local options = {
     gleam = { "gleam" },
     cpp = { "clang-format" },
     nim = { "nimpretty" },
+    astro = { "biome" },
   },
 
   -- format_on_save = {

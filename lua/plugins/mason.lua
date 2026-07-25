@@ -29,6 +29,7 @@ return {
         "phpstan",
         "pint",
         "svelte-language-server",
+        "astro-language-server",
       },
     },
     config = function(_, opts)

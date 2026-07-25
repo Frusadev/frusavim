@@ -14,6 +14,7 @@ local servers = {
   "nim_langserver",
   "intelephense",
   "svelte",
+  "astro",
 }
 
 vim.lsp.enable("basedpyright", {
@@ -24,6 +25,16 @@ vim.lsp.enable("basedpyright", {
     },
   },
 })
+
+vim.lsp.config("astro", {
+  init_options = {
+    typescript = {
+      tsdk = vim.fn.expand("~/.local/share/nvim/mason/packages/astro-language-server/node_modules/typescript/lib"),
+    },
+  },
+})
+
+vim.lsp.enable("astro")
 
 vim.lsp.enable("tailwindcss", {
   filetypes = { "html", "typescriptreact", "javascriptreact", "svelte", "vue" },
